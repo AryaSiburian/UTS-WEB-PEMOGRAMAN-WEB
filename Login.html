@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Form Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+
+            <div class="forgotpass">
+                <a href=""><p>Forgot Password?</p></a>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        function validateForm() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username.length < 6) {
+                alert("Username minimal 6 karakter.");
+                return false;
+              }
+            let usernameRegex = /^[a-zA-Z0-9]+$/;
+            if (!usernameRegex. test(username)){
+                alert("Username hanya boleh berisi huruf dan angka")
+                return false;
+            }
+            
+        }
+    </script>
+</body>
+</html>
